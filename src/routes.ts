@@ -7,8 +7,6 @@ const repository = new CreateFeedbackRepository();
 const useCase = new CreateFeedbackUseCase(repository);
 
 const routes = Router();
-console.log('repository => ', repository);
-console.log('useCase => ', useCase);
-routes.post("/feedbacks", new FeedbackController(useCase).handle);
+routes.post("/feedbacks", (req, res) => new FeedbackController(useCase).handle(req, res));
 
 export { routes };

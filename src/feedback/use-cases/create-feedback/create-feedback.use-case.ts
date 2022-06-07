@@ -10,6 +10,9 @@ export class CreateFeedbackUseCase implements CreateFeedbackUseCaseContract {
   }
 
   async execute(feedback: FeedbackDto): Promise<Feedback> {
+    if (feedback.type !== "BUG" && feedback.type !== "FEATURE") {
+      throw new Error("Invalid feedback type");
+    }
     const entity = new Feedback(feedback);
     return await this.createFeedbackRepository.create(entity);
   }
