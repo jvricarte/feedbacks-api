@@ -1,7 +1,7 @@
 import { Feedback } from "../../domain/feedback.entity";
 import { FeedbackDto } from "../../dtos/feedback.dto";
-import { CreateFeedbackRepositoryContract } from "../../repositories/create-feedback/create-feedback.contract";
-import { CreateFeedbackUseCaseContract } from "./create-feedback-use-case.contract";
+import { CreateFeedbackRepositoryContract } from "../../repositories/create-feedback/create-feedback.repository.contract";
+import { CreateFeedbackUseCaseContract } from "./create-feedback.use-case.contract";
 
 export class CreateFeedbackUseCase implements CreateFeedbackUseCaseContract {
   private createFeedbackRepository: CreateFeedbackRepositoryContract

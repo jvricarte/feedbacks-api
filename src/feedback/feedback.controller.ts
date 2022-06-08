@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateFeedbackUseCaseContract } from "./use-cases/create-feedback/create-feedback-use-case.contract";
+import { CreateFeedbackUseCaseContract } from "./use-cases/create-feedback/create-feedback.use-case.contract";
 import { FeedbackDto } from "./dtos/feedback.dto";
 
 export class FeedbackController {
