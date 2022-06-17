@@ -1,5 +1,5 @@
 export type FeedbackDto = {
   id?: string;
-  type: string;
+  type: number;
   description: string;
 }

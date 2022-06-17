@@ -1,3 +1,4 @@
+import { FeedbackTypeEnum } from "../../../utils/enums/feedback-type.enum";
 import { Feedback } from "../../domain/feedback.entity";
 import { FeedbackDto } from "../../dtos/feedback.dto";
 import { CreateFeedbackRepositoryContract } from "../../repositories/create-feedback/create-feedback.repository.contract";
@@ -10,7 +11,7 @@ export class CreateFeedbackUseCase implements CreateFeedbackUseCaseContract {
   }
 
   async execute(feedback: FeedbackDto): Promise<Feedback> {
-    if (feedback.type !== "BUG" && feedback.type !== "FEATURE") {
+    if (feedback.type !== FeedbackTypeEnum.BUG && feedback.type !== FeedbackTypeEnum.FEATURE) {
       throw new Error("Invalid feedback type");
     }
     const entity = new Feedback(feedback);

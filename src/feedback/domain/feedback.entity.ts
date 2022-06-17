@@ -3,7 +3,7 @@ import { FeedbackDto } from "../dtos/feedback.dto";
 
 export class Feedback {
   id: string;
-  type: string;
+  type: number;
   description: string;
 
   constructor(data: FeedbackDto) {

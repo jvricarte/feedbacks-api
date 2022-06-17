@@ -1,3 +1,4 @@
+import { FeedbackTypeEnum } from "../../../utils/enums/feedback-type.enum";
 import { Feedback } from "../../domain/feedback.entity";
 import { CreateFeedbackUseCase } from "./create-feedback.use-case";
 
@@ -12,7 +13,7 @@ describe("Create feedback", () => {
   it("Should be able to create a feedback", () => {
     expect(
       createFeedbackUseCaseMock.execute({
-        type: "BUG",
+        type: FeedbackTypeEnum.BUG,
         description: "This is a bug",
       })
     ).resolves.not.toThrowError();
@@ -22,7 +23,7 @@ describe("Create feedback", () => {
   it("Should not be able to create a feedback without a valid type", () => {
     expect(
       createFeedbackUseCaseMock.execute({
-        type: "INVALID",
+        type: 5,
         description: "This is a bug",
       })
     ).rejects.toThrowError();
